@@ -1,9 +1,9 @@
 ---
 driver:
-  name: vagrant
+  name: ec2
 
 provisioner:
-  name: chef_solo
+  name: ansible_playbook
 
 platforms:
   - name: ubuntu-18.04
