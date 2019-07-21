@@ -2,14 +2,16 @@
 driver:
   name: ec2
 
-provisioner:
-  name: ansible_playbook
-
 platforms:
   - name: ubuntu-18.04
-  - name: centos-7
+
+provisioner:
+  hosts: all
+  idempotency_test: true
+  name: ansible_playbook
 
 suites:
   - name: default
-    run_list:
-    attributes:
+
+verifier:
+  name: inspec
