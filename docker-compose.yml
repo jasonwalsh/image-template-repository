@@ -3,9 +3,18 @@ services:
   kitchen:
     build: .
     command: test
-    environment:
+    environment: &environment
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION:-us-east-1}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
-    volumes:
+    volumes: &volumes
       - .:/workspace
+
+  packer:
+    build:
+      context: .
+      dockerfile: packer/Dockerfile
+    command: build packer/template.json
+    environment: *environment
+    volumes: *volumes
+    working_dir: /workspace
