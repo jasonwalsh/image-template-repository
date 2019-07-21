@@ -1,0 +1,26 @@
+jobs:
+  build:
+    docker:
+      - image: chef/inspec
+    steps:
+      - checkout
+      - run: |
+          wget https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip \
+            && unzip -d /usr/local/bin packer_1.4.2_linux_amd64.zip \
+            && rm packer_1.4.2_linux_amd64.zip
+      - run: packer build packer/template.json
+
+  verify:
+    docker:
+      - image: ruby:2.6.3
+    steps:
+      - checkout
+      - restore_cache:
+          key: bundler-{{ checksum "Gemfile.lock" }}
+      - run: bundle install
+      - save_cache:
+          key: bundler-{{ checksum "Gemfile.lock" }}
+          paths:
+            - /usr/local/bundle
+      - run: bundle exec kitchen test --destroy=always
+version: 2
