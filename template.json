@@ -32,15 +32,15 @@
       "type": "shell"
     },
     {
-      "playbook_dir": "{{ template_dir }}/../roles",
-      "playbook_file": "{{ template_dir }}/../test/integration/default/default.yml",
+      "playbook_dir": "{{ template_dir }}/roles",
+      "playbook_file": "{{ template_dir }}/test/integration/default/default.yml",
       "type": "ansible-local"
     },
     {
       "inspec_env_vars": [
         "CHEF_LICENSE=accept-silent"
       ],
-      "profile": "{{ template_dir }}/../test/integration/default",
+      "profile": "{{ template_dir }}/test/integration/default",
       "type": "inspec"
     }
   ],
