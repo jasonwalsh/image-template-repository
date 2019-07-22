@@ -1,3 +1,3 @@
-describe os.family do
-  it { should eq 'debian' }
+describe package('unattended-upgrades') do
+  it { should_not be_installed }
 end

@@ -1,3 +1,6 @@
 ---
-- debug:
-    msg: "Hello, World!"
+- name: Uninstall unattended-upgrades
+  apt:
+    name: unattended-upgrades
+    state: absent
+  become: true

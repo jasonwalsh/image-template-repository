@@ -14,7 +14,8 @@
         "most_recent": true,
         "owners": [
           "self",
-          "aws-marketplace"
+          "aws-marketplace",
+          "099720109477"
         ]
       },
       "ssh_username": "ubuntu",
