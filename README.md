@@ -13,22 +13,24 @@ This repository is a GitHub [template](https://help.github.com/en/articles/creat
 
 ```
 .
-├── Dockerfile
 ├── Gemfile
 ├── Gemfile.lock
 ├── LICENSE
 ├── README.md
 ├── chefignore
 ├── docker-compose.yml
+├── dockerfiles
+│   ├── kitchen
+│   │   └── Dockerfile
+│   └── packer
+│       └── Dockerfile
 ├── kitchen.yml
-├── packer
-│   ├── Dockerfile
-│   └── template.json
 ├── roles
 │   ├── README.md
 │   └── common
 │       └── tasks
 │           └── main.yml
+├── template.json
 └── test
     └── integration
         └── default
@@ -36,7 +38,7 @@ This repository is a GitHub [template](https://help.github.com/en/articles/creat
             ├── default.yml
             └── inspec.lock
 
-7 directories, 15 files
+9 directories, 15 files
 ```
 
 ## Usage
