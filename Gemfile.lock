@@ -232,7 +232,7 @@ GEM
       tty-table (~> 0.10)
     inspec-bin (4.7.18)
       inspec (= 4.7.18)
-    jmespath (1.4.0)
+    jmespath (1.6.1)
     json (2.2.0)
     json-schema (2.8.1)
       addressable (>= 2.4)
